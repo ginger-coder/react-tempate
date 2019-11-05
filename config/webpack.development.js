@@ -11,7 +11,7 @@ let devConfig = {
         port: 9000,
         open: true,
         hot: true,
-        historyApiFallback: true,
+        // historyApiFallback: true,
         host: ip.address(),
     },
     plugins: [
@@ -20,7 +20,8 @@ let devConfig = {
             filename: 'index.html',
             template: resolve(__dirname, "../src/template/index.html"),
         })
-    ]
+    ],
+    devtool: 'inline-source-map'
 }
 
 module.exports = devConfig;

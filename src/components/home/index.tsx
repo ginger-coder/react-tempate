@@ -2,7 +2,6 @@ import * as React from "react";
 
 const buildName = (firstName:string,...restOfName:[]):Array<string> => {
     return [firstName,...restOfName];
-    // console.log(1111);
 }
 
 var people = {
@@ -19,7 +18,7 @@ console.error(name);
 
 
 const home = () => {
-    return <div>Hello { buildName('Bian', 'And', 'Juan').join('❤️') }</div>
+    return <div>Hello { buildName('Bian', 'And', 'XXOO') }</div>
 }
 
 

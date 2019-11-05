@@ -1,18 +1,18 @@
 import * as React from "react";
 import { Route, Switch, RouteProps } from "react-router-dom";
 // import history from './history';
-import Menu from '@components/menu';
+import Menu from '@/components/menu';
 
 const { lazy, Suspense } = React;
 
 const Demo = lazy(() =>
-    import("@components/demo")
+    import("@/components/demo")
 );
 const Login = lazy(() =>
-    import("@components/login")
+    import("@/components/login")
 );
 const Home = lazy(() =>
-    import("@components/home")
+    import("@/components/home")
 );
 
 export const routes: RouteProps[] = [
@@ -36,6 +36,7 @@ export const routes: RouteProps[] = [
 const Routes = () => (
     <Suspense fallback={<span>Loading</span>}>
         <Menu />
+        <Tsdemo name='genger' enthusiasmLevel={10} />
         <Switch>
             {routes.map((r) => {
                 const { path, exact, component } = r;

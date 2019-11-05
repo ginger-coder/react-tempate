@@ -1,6 +1,21 @@
 import * as React from 'react';
-import * as ReactROM from 'react-dom';
+import * as ReactDOM from 'react-dom';
 
-import App from './pages/app';
+import { createStore } from 'redux';
+import { enthusiasm } from '@/reducers';
+import { StoreState } from '@/types';
 
-ReactROM.render(<App />, document.getElementById('app'));
+import TsDemo from './containers/tsdemo';
+import { Provider } from 'react-redux';
+
+const store = createStore<StoreState>(enthusiasm, {
+    enthusiasmLevel: 1,
+    languageName: 'TypeScript',
+});
+
+ReactDOM.render(
+    <Provider store={store}>
+        <TsDemo />
+    </Provider>,
+    document.getElementById('app') as HTMLElement
+);

@@ -1,6 +1,5 @@
 const { join, resolve } = require("path");
 const merge = require('webpack-merge');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const argv = require('yargs-parser')(process.argv.slice(2)) // 解析 package.json 传入的参数
 
@@ -75,7 +74,7 @@ let baseConfig = {
     // },
     resolve: {
         alias: {
-            "@components": resolve("src/components"),
+            "@": resolve("src"),
         },
         modules: ["node_modules", resolve("src")],
         extensions: [".js", ".ts", ".tsx", "jsx"]
